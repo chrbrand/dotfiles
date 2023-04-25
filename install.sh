@@ -4,7 +4,9 @@ zshrc() {
     echo "==========================================================="
     echo "             softlink aliases.zsh                          "
     echo "-----------------------------------------------------------"  
-    ln -s aliases.zsh $HOME/.oh-my-zsh/custom/aliases.zsh
+# Get the directory in which this script lives.
+    script_dir=$(dirname "$(readlink -f "$0")")
+    ln -s $script_dir/aliases.zsh $HOME/.oh-my-zsh/custom/aliases.zsh
     echo "==========================================================="
     echo "             cloning zsh-autosuggestions                   "
     echo "-----------------------------------------------------------"                    
